@@ -6,25 +6,30 @@ import CustomButton from "@/components/CustomButton";
 export default function Index() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text style={{ fontSize: 50, fontWeight: "bold", color: "white" }}>
-        Where I was?
+      <Text style={{ fontSize: 50, fontWeight: 800, color: "black" }}>
+        TrainGraph
       </Text>
-      <Text
-        style={{
-          padding: 8,
-          fontSize: 20,
-          textAlign: "center",
-          color: "white",
-        }}
-      >
-        Probably the best application for people that loves find their own ways
-        in the travels
+      <Text style={{ fontSize: 24, marginVertical: 14, fontWeight: 200 }}>
+        Secure your goals
       </Text>
       <CustomButton
-        title="Sign In"
-        onPress={() => router.push("/auth" as Href)}
-        additionalButtonClassName="w-[90vw] m-4 bg-white"
-        additionalButtonTextClassName="text-black font-bold text-lg"
+        title="Join"
+        onPress={() => router.push("/SignIn" as Href)}
+        additionalButtonClassName={
+          {
+            width: "90%",
+            height: 50,
+            backgroundColor: "black",
+            margin: 10,
+            marginTop: 150,
+          } as any
+        }
+        additionalButtonTextClassName={
+          {
+            color: "white",
+            fontSize: 25,
+          } as any
+        }
       />
     </View>
   );

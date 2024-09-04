@@ -1,12 +1,18 @@
 import React from "react";
-import { TouchableOpacity, Text, TouchableOpacityProps } from "react-native";
+import {
+  TouchableOpacity,
+  Text,
+  TouchableOpacityProps,
+  ViewStyle,
+  StyleProp,
+} from "react-native";
 
 interface CustomButtonProps extends TouchableOpacityProps {
   title: string;
   onPress: () => void;
   isLoading?: boolean;
-  additionalButtonClassName?: string;
-  additionalButtonTextClassName?: string;
+  additionalButtonClassName?: StyleProp<ViewStyle>;
+  additionalButtonTextClassName?: StyleProp<ViewStyle>;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
@@ -16,13 +22,24 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 }) => {
   return (
     <TouchableOpacity
-      {...rest}
       onPress={onPress}
       disabled={rest?.isLoading || false}
-      className={`p-2 bg-green-800 flex items-center justify-center rounded-xl ${rest?.additionalButtonClassName}`}
+      style={[
+        {
+          backgroundColor: "black",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: 8,
+        },
+        rest?.additionalButtonClassName,
+      ]}
     >
       <Text
-        className={`p-1 text-base font-medium text-white ${rest?.additionalButtonTextClassName}`}
+        style={[
+          { fontSize: 16, fontWeight: "500", color: "white" },
+          rest?.additionalButtonTextClassName,
+        ]}
       >
         {title}
       </Text>

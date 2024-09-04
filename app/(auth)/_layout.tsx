@@ -6,21 +6,21 @@ export default function RootLayout() {
     <>
       <Stack>
         <Stack.Screen
-          name="sign-in"
+          name="SignIn"
           options={{
             headerShown: false,
-            title: '',
+            title: "Sign In",
           }}
         />
         <Stack.Screen
-          name="sign-up"
+          name="SignUp"
           options={{
             headerShown: false,
-            title: '',
+            title: "Sign Up",
           }}
         />
       </Stack>
-      <StatusBar hidden={true} />
+      {/* <StatusBar hidden={tru}/> */}
     </>
   );
 }
